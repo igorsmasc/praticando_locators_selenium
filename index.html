@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Praticando Locators</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-5">Praticando Locators</h1>
+        <p class="text-center">Crie um teste para cada elemento utilizando o respectivo locator e valide o texto.
+        </p>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="card-header">
+                        <h3>1 - ID</h3>
+                    </div>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <p class="lead">Achei com <b>ID</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header">
+                            <h3>2 - Class Name</h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="lead locator-class-name">Achei com <b>Class Name</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header">
+                            <h3>3- Name</h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <p name="locator-name" class="lead">Achei com <b>Name</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header">
+                            <h3>4 - CSS</h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="lead css-selector-locator" id="css-selector">Achei com <b>CSS Selector</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header">
+                            <h3>5 - Link Text</h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <a class="link-opacity-10-hover" href="https://www.google.com/">Achei com o link text</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header">
+                            <h3>6 - Partial Link Text</h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <a class="link-opacity-10-hover" href="https://www.google.com/">Achei com o partial link text</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header">
+                            <h3>7 - Tag Name</h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="lead">Achei com <b>Tag Name</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header">
+                            <h3>8 - XPATH</h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="lead">Achei com o <b>XPATH</b></p>
+                        </div>
+                    </div>
+                </div>
+            <hr>
+            <div class="accordion" id="seletoresAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="idHeader">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#idCollapse" aria-expanded="true" aria-controls="idCollapse">
+                            Seletor ID
+                        </button>
+                    </h2>
+                    <div id="idCollapse" class="accordion-collapse collapse show" aria-labelledby="idHeader"
+                        data-bs-parent="#seletoresAccordion">
+                        <div class="accordion-body">
+                            O seletor ID é usado para selecionar um elemento HTML com base em um ID exclusivo atribuído
+                            a ele.
+                            Isso é feito utilizando o método <code>findElement(By.id("id-do-elemento"))</code> do
+                            WebDriver.
+                            O ID é um atributo HTML que é atribuído a um elemento HTML e é exclusivo em toda a página.
+                            Por exemplo, <code>&lt;input type="text" id="username"&gt;</code> pode ser selecionado com o
+                            seletor ID
+                            <code>findElement(By.id("username"))</code>.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="classHeader">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#classCollapse" aria-expanded="false" aria-controls="classCollapse">
+                            Seletor ClassName
+                        </button>
+                    </h2>
+                    <div id="classCollapse" class="accordion-collapse collapse" aria-labelledby="classHeader"
+                        data-bs-parent="#seletoresAccordion">
+                        <div class="accordion-body">
+                            O seletor ClassName é usado para selecionar um ou mais elementos HTML com base em uma classe
+                            específica atribuída a eles.
+                            Isso é feito utilizando o método <code>findElement(By.className("nome-da-classe"))</code> do
+                            WebDriver.
+                            A classe é um atributo HTML que é atribuído a um ou mais elementos HTML.
+                            Por exemplo, <code>&lt;button class="botao-2"&gt;Enviar&lt;/button&gt;</code> pode ser
+                            selecionado com o seletor ClassName
+                            <code>findElement(By.className("botao-2"))</code>.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="nameHeader">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#nameCollapse" aria-expanded="false" aria-controls="nameCollapse">
+                            Seletor Name
+                        </button>
+                    </h2>
+                    <div id="nameCollapse" class="accordion-collapse collapse" aria-labelledby="nameHeader"
+                        data-bs-parent="#seletoresAccordion">
+                        <div class="accordion-body">
+                            O seletor Name é usado para selecionar um ou mais elementos HTML com base no valor do
+                            atributo "name" atribuído a eles.
+                            Isso é feito utilizando o método <code>findElement(By.name("valor-do-atributo-name"))</code>
+                            do WebDriver.
+                            O atributo "name" é um atributo HTML que é atribuído a um ou mais elementos HTML.
+                            Por exemplo, <code>&lt;input type="text" name="usuario"&gt;</code> pode ser selecionado com
+                            o seletor Name <code>findElement(By.name("usuario"))</code>.
+                        </div>
+                    </div>
+
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="cssHeader">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#cssCollapse" aria-expanded="false" aria-controls="cssCollapse">
+                            Seletor CSS
+                        </button>
+                    </h2>
+                    <div id="cssCollapse" class="accordion-collapse collapse" aria-labelledby="cssHeader"
+                        data-bs-parent="#seletoresAccordion">
+                        <div class="accordion-body">
+                            O seletor CSS é usado para selecionar um ou mais elementos HTML com base em um seletor CSS
+                            específico.
+                            Isso é feito utilizando o método <code>findElement(By.cssSelector("seletor-css"))</code> do
+                            WebDriver.
+                            Os seletores CSS permitem que você selecione elementos com base em atributos, valores de
+                            atributos, classes, IDs e muito mais.
+                            Por exemplo, <code>&lt;div class="classe-1"&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;/div&gt;</code>
+                            pode ser selecionado com o seletor CSS
+                            <code>findElement(By.cssSelector("div.classe-1 p"))</code>.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="linkHeader">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#linkCollapse" aria-expanded="false" aria-controls="linkCollapse">
+                            Seletor Link Text
+                        </button>
+                    </h2>
+                    <div id="linkCollapse" class="accordion-collapse collapse" aria-labelledby="linkHeader"
+                        data-bs-parent="#seletoresAccordion">
+                        <div class="accordion-body">
+                            O seletor Link Text é usado para selecionar um elemento HTML com base no texto do Link.
+                            Isso é feito utilizando o método <code>findElement(By.linkText("Texto do link"))</code> do
+                            WebDriver.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="partialLinkHeader">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#partialLinkCollapse" aria-expanded="false" aria-controls="partialLinkCollapse">
+                            Seletor Partial Link Text
+                        </button>
+                    </h2>
+                    <div id="partialLinkCollapse" class="accordion-collapse collapse" aria-labelledby="partialLinkHeader"
+                        data-bs-parent="#seletoresAccordion">
+                        <div class="accordion-body">
+                            O seletor Partial Link Text é usado para selecionar um elemento HTML com base em parte do texto do Link.
+                            Isso é feito utilizando o método <code>findElement(By.partialLinkText("Parte do texto do link"))</code> do
+                            WebDriver.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="tagNameHeader">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#tagNameCollapse" aria-expanded="false" aria-controls="tagNameCollapse">
+                            Seletor Tag Name
+                        </button>
+                    </h2>
+                    <div id="tagNameCollapse" class="accordion-collapse collapse" aria-labelledby="tagNameHeader"
+                        data-bs-parent="#seletoresAccordion">
+                        <div class="accordion-body">
+                            O seletor Tag Name é usado para selecionar um ou mais elementos HTML com base em uma Tag HTML
+                            específica.
+                            Isso é feito utilizando o método <code>findElement(By.tagName("a"))</code> do
+                            WebDriver.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="xpathHeader">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#xpathCollapse" aria-expanded="false" aria-controls="xpathCollapse">
+                            Seletor Xpath
+                        </button>
+                    </h2>
+                    <div id="xpathCollapse" class="accordion-collapse collapse" aria-labelledby="xpathHeader"
+                        data-bs-parent="#seletoresAccordion">
+                        <div class="accordion-body">
+                            O seletor Xpath é usado para selecionar um ou mais elementos HTML com base em um caminho
+                            específico no documento HTML.
+                            Isso é feito utilizando o método <code>findElement(By.xpath("caminho-xpath"))</code> do
+                            WebDriver.
+                            Os caminhos XPath permitem que você selecione elementos com base em sua localização no
+                            documento HTML, seus atributos e muito mais.
+                            Por exemplo, <code>&lt;div class="classe-2"&gt;&lt;p&gt;World&lt;/p&gt;&lt;/div&gt;</code>
+                            pode ser selecionado com o seletor Xpath
+                            <code>findElement(By.xpath("//div[@class='classe-2']/p"))</code>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <span class="text-muted">&copy; 2023 <a href="https://www.linkedin.com/in/igor-mascarenhas/"
+                    target="_blank">Professor Igor Mascarenhas</a>. Código para aulas de automação.</span>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
